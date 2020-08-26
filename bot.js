@@ -64,7 +64,6 @@ client.on("message", msg => {
       .setThumbnail(msg.guild.iconURL)
       .setColor("RANDOM")
       .addField('!move @user", "Move User To Your Room Voice")
-      .setTimestamp()
       msg.channel.send(embed);
     }
   });
