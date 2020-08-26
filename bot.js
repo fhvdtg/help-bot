@@ -32,6 +32,18 @@ console.log("1")
 console.log("====================================")
 });
 
+ client.on('message', message => {   
+     if (message.content === "!ping") {
+      const embed = new Discord.RichEmbed()
+ 
+  .setColor("RANDOM")
+  .addField('``Ping:`` ' , `${Date.now() - message.createdTimestamp}` + ' ms`')
+ 
+
+  message.channel.sendEmbed(embed);
+    }
+}); 
+
 client.on("ready", () => {
 let BotOnline = client.channels.get("745991971973234729");// ايدي الروم
   
