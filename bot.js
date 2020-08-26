@@ -34,7 +34,7 @@ console.log("====================================")
 });
 
 client.on('message', message => {
- var prefix = "-";
+ var prefix = "!";
 if (message.content.startsWith(prefix + 'help')) {
     let pages = [
 	`=-=-=-=-=-= 🌍 Public Commands 🌍 =-=-=-=-=-=
