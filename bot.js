@@ -62,7 +62,8 @@ client.on("message", msg => {
     if(msg.content.startsWith(prefix + 'help admin')){
       let embed = new Discord.RichEmbed()
       .setThumbnail(msg.guild.iconURL)
-      .setColor("RANDOM")
+      .setColor('RANDOM')
+      .setDescription('Hi')
       .addField('!move @user", "Move User To Your Room Voice")
       msg.channel.send(embed);
     }
