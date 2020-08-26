@@ -56,29 +56,17 @@ let BotOnline = client.channels.get("745991971973234729");// ايدي الروم
   BotOnline.send(online);
 
 });
-
-client.on("message", message => {
-    if (message.content === "!help admin") {
-     const embed = new Discord.RichEmbed()
-    .setColor("#00ff00")
-    .setTitle("Admin Commands")
-    .setThumbnail(message.author.avatarURL)
-    .addField("!move @user", "Move User To Your Room Voice", true)
-    .addField("!mvall", "Custom commands", true)
-    .addField("!roleremove @user <rank>", "remove Rank From User", true)
-    .addField("!role all <rank>", "Give All Rank", true)
-    .addField("!role bots <rank>", "Give Bots Rank", true)
-    .addField("!role humans <rank>", "Give Humans Rank", true)
-    .addField("!clear <number>", "Clear Chat With Number", true)
-    .addField("!clearall", "Clear Chat (100 messages)", true)
-    .addField("!mute @user", "Mute User", true)
-    .addField("!unmute @user", "Unmute User", true)
-    .addField("!kick @user <reason>", "Kick User From Server", true)
-    .addField("Questions", "If you have any questions feel free to ask in the [Support Server](https://discord.gg/zvvasbc)")
-    .setFooter("Bot By MrBloods", "hhttps://cdn.discordapp.com/avatars/436918120184021012/4d53dd8fb3145d9740bb29c3a4259b2a.png?size=2048")
-
-    message.channel.send(embed)
-     }
-});
+              
+client.on("message", msg => {
+    var prefix = '!'//البركفس
+    if(msg.content.startsWith(prefix + 'help admin')){
+      let embed = new Discord.RichEmbed()
+      .setThumbnail(msg.guild.iconURL)
+      .setColor("RANDOM")
+      .addField('!move @user", "Move User To Your Room Voice")
+      .setTimestamp()
+      msg.channel.send(embed);
+    }
+  });
 
 client.login(process.env.BOT_TOKEN);
