@@ -1,9 +1,8 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 var prefix ="!";
-var adminprefix = '-'
+var adminprefix = '!'
 const developers = ["436918120184021012"]
-const config = require("./config.json");
 
  client.on('ready', function(){
     var ms = 10000 ;
@@ -52,12 +51,17 @@ client.on("message", message => {
     .setColor("#00ff00")
     .setTitle("Admin Commands")
     .setThumbnail(message.author.avatarURL)
-    .addField("❖ !move @user", "Move User To Your Room Voice")
-    .addField("❖ !mvall", "Custom commands")
+    .addField("!move @user", "Move User To Your Room Voice")
+    .addField("!mvall", "Custom commands")
     .addField("!roleremove @user <rank>", "remove Rank From User")
     .addField("!role all <rank>", "Give All Rank")
     .addField("!role bots <rank>", "Give Bots Rank")
     .addField("!role humans <rank>", "Give Humans Rank")
+    .addField("!clear <number>", "Clear Chat With Number")
+    .addField("!clearall", "Clear Chat (100 messages)")
+    .addField("!mute @user", "Mute User")
+    .addField("!unmute @user", "Unmute User")
+    .addField("!kick @user <reason>", "Kick User From Server")
     .addField("Questions", "If you have any questions feel free to ask in the [Support Server](https://discord.gg/zvvasbc)")
     .setFooter("Bot By MrBloods", "hhttps://cdn.discordapp.com/avatars/436918120184021012/4d53dd8fb3145d9740bb29c3a4259b2a.png?size=2048")
 
