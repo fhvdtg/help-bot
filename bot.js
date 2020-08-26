@@ -1,28 +1,37 @@
-const Discord = require('discord.js');  
-const db = require('quick.db');  
-const hastebin = require('hastebin-gen');  
-const client = new Discord.Client();    
-const Canvas = require('canvas');        
-const fs = require("fs"); 
-const getYoutubeID = require('get-youtube-id'); 
-const moment = require("moment");   
-const { Client, Util } = require('discord.js');  
-const UserBlocked = new Set();  
-const jimp = require('jimp');   
-const math = require('math-expression-evaluator'); 
-const stripIndents = require('common-tags').stripIndents;
-const figlet = require('figlet'); 
-const queue = new Map(); 
-const zalgo = require('zalgolize');   
-const fetchVideoInfo = require('youtube-info');
-const YouTube = require('simple-youtube-api');
-const ytdl = require('ytdl-core');
-const youtube = new YouTube("AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8");
-const sql = require("sqlite");
- const dateFormat = require('dateformat'); 
- const pretty = require('pretty-ms') 
-,ti={}  
-,spee={}; 
+const Discord = require("discord.js");
+const client = new Discord.Client();
+var prefix ="!";
+var adminprefix = '-'
+const developers = ["436918120184021012"]
+const config = require("./config.json");
+
+ client.on('ready', function(){
+    var ms = 10000 ;
+    var setGame = ['Dev: MrBloods','MrBloods'];
+    var i = -1;
+    var j = 0;
+    setInterval(function (){
+        if( i == -1 ){
+            j = 1;
+        }
+        if( i == (setGame.length)-1 ){
+            j = -1;
+        }
+        i = i+j;
+        client.user.setGame(setGame[i],`http://www.twitch.tv/MrBloods`);
+    }, ms);
+console.log("==================================")
+console.log("1")
+console.log("2")
+console.log("3")
+console.log("=========> Bot Online <=========")
+console.log("========> MrBloodsBot <========")
+console.log("=======> Token Bot **** <=======")
+console.log("3")
+console.log("2")
+console.log("1")
+console.log("====================================")
+});
 
 client.on('message', message => {
  var prefix = "-";
