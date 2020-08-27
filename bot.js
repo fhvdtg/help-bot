@@ -1,8 +1,9 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 var prefix ="!";
-var adminprefix = '!'
+var adminprefix = '-'
 const developers = ["436918120184021012"]
+const config = require("./config.json");
 
  client.on('ready', function(){
     var ms = 10000 ;
@@ -32,7 +33,7 @@ console.log("1")
 console.log("====================================")
 });
 
- client.on('message', message => {   
+client.on('message', message => {   
      if (message.content === "!ping") {
       const embed = new Discord.RichEmbed()
  
