@@ -57,17 +57,5 @@ let BotOnline = client.channels.get("745991971973234729");// ايدي الروم
   BotOnline.send(online);
 
 });
-              
-client.on("message", msg => {
-    var prefix = '!'//البركفس
-    if(msg.content.startsWith(prefix + 'help admin')){
-      let embed = new Discord.RichEmbed()
-      .setThumbnail(msg.guild.iconURL)
-      .setColor('RANDOM')
-      .setDescription('Hi')
-      .addField('!move @user", "Move User To Your Room Voice")
-      msg.channel.send(embed);
-    }
-  });
 
 client.login(process.env.BOT_TOKEN);
