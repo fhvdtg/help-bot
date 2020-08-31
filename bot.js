@@ -103,7 +103,6 @@ client.on('message', message => {
         .addField('!clearall', 'Clear Chat (100 messages)')
         .addField('!mute', 'Mute User')
         .addField('!unmute', 'UnMute User')
-        .addField('!warn', 'Warn User')
         .addField('!kick', 'Kick User From Server')
         .addField('!ban', 'Ban User From Server')
         .addField('!mutechannel', 'Mute Channel')
