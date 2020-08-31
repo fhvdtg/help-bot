@@ -60,11 +60,23 @@ let BotOnline = client.channels.get("745991971973234729");// ايدي الروم
 client.on('message', message => {
     if (message.content === '!help system') {
         let helpEmbed = new Discord.RichEmbed()
+        .setColor('#609da5')
+        .setThumbnail(client.user.avatarURL)
         .setTitle('🎯 System Commands 🎯')
         .addField('!move', "Move User To Your Room Voice")
         .addField('!mvall', 'Move All To Your Room Voice')
         .addField('!roleremove', 'remove Rank From User')
         .addField('!role all/humans/bits', 'Give All/JustHumans/JustBots Rank')
+        .addField('!clear', 'Clear Chat With Number')
+        .addField('!clearall', 'Clear Chat (100 messages)')
+        .addField('!mute', 'Mute User')
+        .addField('!unmute', 'UnMute User')
+        .addField('!kick', 'Kick User From Server')
+        .addField('!ban', 'Ban User From Server')
+        .addField('!mutechannel', 'Mute Channel')
+        .addField('!unmutechannel', 'UnMute Channel')
+        .addField('!kv', 'Voice Kick')
+        .addField('!vonline', 'Create Channel Voice Online')
         .setFooter('System Bot By MrBloods ©')
       message.channel.send(helpEmbed);
     }
