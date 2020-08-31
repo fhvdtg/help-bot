@@ -58,6 +58,38 @@ let BotOnline = client.channels.get("745991971973234729");// ايدي الروم
 });
 
 client.on('message', message => {
+    if (message.content === '!help test!') {
+        let helpEmbed = new Discord.RichEmbed()
+        .setColor('#609da5')
+        .setThumbnail(client.user.avatarURL)
+        .setTitle('🎯 Test Commands :test: 🎯')
+        .addField('!test', "test")
+        .addField('!test', 'test test')
+        .addField('!test', 'test test test :test:')
+        .setFooter(' Bot By MrBloods © :test:')
+      message.channel.send(helpEmbed);
+    }
+});
+
+
+client.on('message', message => {
+    if (message.content === '!help') {
+        let helpEmbed = new Discord.RichEmbed()
+        .setColor('#609da5')
+        .setThumbnail(client.user.avatarURL)
+        .setAuthor(client.user.username,client.user.avatarURL)
+        .addField('!help', "Show Help Commands")
+        .addField('!help system ', 'Show System Commands')
+        .addField('!help public', 'Show Public Commands')
+        .addField('!help Games', 'Show Games Commands')
+        .addField('!help Music', 'Show Music Commands')
+        .setFooter('Help Bot By MrBloods ©')
+      message.channel.send(helpEmbed);
+    }
+});
+
+
+client.on('message', message => {
     if (message.content === '!help system') {
         let helpEmbed = new Discord.RichEmbed()
         .setColor('#609da5')
