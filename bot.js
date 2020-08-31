@@ -62,11 +62,11 @@ client.on('message', message => {
         let helpEmbed = new Discord.RichEmbed()
         .setColor('#609da5')
         .setThumbnail(client.user.avatarURL)
-        .setTitle('🎯 Test Commands :test: 🎯')
+        .setTitle('🎯 Test Commands :test2: 🎯')
         .addField('!test', "test")
-        .addField('!test', 'test test')
-        .addField('!test', 'test test test :test:')
-        .setFooter(' Bot By MrBloods © :test:')
+        .addField('!test', 'test test :test2:')
+        .addField('!test', 'test test test :test2:')
+        .setFooter(' Bot By MrBloods © :test2:')
       message.channel.send(helpEmbed);
     }
 });
