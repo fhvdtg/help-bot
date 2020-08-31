@@ -58,13 +58,15 @@ let BotOnline = client.channels.get("745991971973234729");// ايدي الروم
 });
 
 client.on('message', message => {
-	if(message.content.startsWith(prefix + "help")){
-    var embed = new Discord.MessageEmbed()
-		.setTitle(`**Help List : n ${prefix}الامر n Requested From ${message.guild} Servern The Prefix Is : ${prefix}**`)
-		.setColor(`RANDOM`)
-		.setDescription(`Requested By : ${message.author}`)
-		return message.channel.send(embed);
-	}
+    if (message.content === '!help') {
+        let helpEmbed = new Discord.RichEmbed()
+        .setTitle('**أوامر عامة...**')
+        .addField('avatar', "افاتار الشخص المطلوب")
+        .addField('gif', 'البحث عن جيف انت تطلبه')
+        .addField('ping', 'معرفة ping البوت')
+        .setFooter('عرب سيرفر سيقوم بتطوير البوت قريبا ان شاء الله')
+      message.channel.send(helpEmbed);
+    }
 });
 
 client.login(process.env.BOT_TOKEN);
