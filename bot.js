@@ -44,6 +44,78 @@ client.on('message', message => {
     }
 }); 
 
+client.on('message', message => {
+    if (message.content.startsWith(prefix + 'help')) {
+    let pages = [`
+     اوامر لصفحة 1
+      `
+    ,`
+اوامر الصفحة2
+    ,`
+ اوامر الصفحة3
+     `
+
+    ,`
+اوامر صفحة 4
+     `
+    ,`
+ اوامر الصفحة 5
+    `
+    ,`
+اوامر الصفة 6
+     `
+
+     ,`
+ اوامر الصفحة 7
+     `
+
+     ,`
+  اوامر الصفة 8
+    `]
+     let page = 1;
+     
+        let embed = new Discord.MessageEmbed()
+        .setColor('RANDOM')
+        .setFooter(`Page ${page} of ${pages.length}`)
+        .setDescription(pages[page-1])
+     
+        message.channel.send(embed).then(msg => {
+     
+            msg.react('◀').then( r => {
+                msg.react('▶')
+     
+               setTimeout(() => {
+            msg.delete
+        }, 60 * 1000)
+     
+            const backwardsFilter = (reaction, user) => reaction.emoji.name === '◀' && user.id === message.author.id;
+            const forwardsFilter = (reaction, user) => reaction.emoji.name === '▶' && user.id === message.author.id;
+     
+     
+            const backwards = msg.createReactionCollector(backwardsFilter, { time: 2000000});
+            const forwards = msg.createReactionCollector(forwardsFilter, { time: 2000000});
+     
+     
+     
+            backwards.on('collect', r => {
+                if (page === 1) return;
+                page--;
+                embed.setDescription(pages[page-1]);
+                embed.setFooter(`Page ${page} of ${pages.length}`);
+                msg.edit(embed)
+            })
+            forwards.on('collect', r => {
+                if (page === pages.length) return;
+                page++;
+                embed.setDescription(pages[page-1]);
+                embed.setFooter(`Page ${page} of ${pages.length}`);
+                msg.edit(embed)
+            })
+            })
+        })
+        }
+    });
+
 client.on("ready", () => {
 let BotOnline = client.channels.get("745991971973234729");// ايدي الروم
   
